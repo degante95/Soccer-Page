@@ -1,0 +1,12 @@
+<div class="backToSearch"><a [routerLink]="['/teams']" class="link">Back to Team Search</a></div>
+<div class="container-fluid row padding">
+    <div class="col-sm-12 col-md-6 col-lg-4 center box results" *ngFor="let event of eventResult">
+       <p>Teams: {{event.strEvent}}</p>   
+       <p>League: {{event.strLeague}}</p>
+       <p>Date: {{event.dateEvent}}</p>
+       <p>Time: {{event.strTime}}</p>
+       <p>Home Team: {{event.strHomeTeam}}</p>
+       <p>Away Team: {{event.strAwayTeam}}</p>
+       
+    </div>
+    </div>

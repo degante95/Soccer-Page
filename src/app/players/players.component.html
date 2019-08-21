@@ -1,0 +1,22 @@
+<div class="form-inline my-2 my-lg-0 boxColor">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search Players" [(ngModel)]="searchplayer">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="playerButton()">Search</button>
+</div>
+<div class="container-fluid row center padding">
+    <div class="col-sm-12 col-md-6 col-lg-4 center box results" *ngFor="let player of playerResult">
+
+        <img [src]="player.strThumb == null ? 'http://images.clipartpanda.com/style-clipart-psy.png' : player.strThumb"
+            id="badge">
+        <p>Name: {{player.strPlayer}}</p>
+        <p>Nationality: {{player.strNationality}}</p>
+        <p>Team: {{player.strTeam}}</p>
+        <p>Position: {{player.strPosition}}</p>
+        <p>Kit Number: {{player.strNumber}}</p>
+
+        <select placeholder="Add to Team" [(ngModel)]="selectedTeam">
+            <option *ngFor="let team of created" [value]="team.name">{{team.name}}</option>
+        </select>
+        <button (click)="teamCreated(player, selectedTeam)">Add to Dream Team</button>
+
+    </div>
+</div>

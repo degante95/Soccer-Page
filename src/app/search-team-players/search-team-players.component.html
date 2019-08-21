@@ -1,0 +1,18 @@
+<div class="backToSearch"><a [routerLink]="['/teams']" class="link">Back to Team Search</a></div>
+    <div class="container-fluid row padding">
+        <div class="col-sm-12 col-md-6 col-lg-4 center box results" *ngFor="let team of teamResult">
+                <img [src]="team.strThumb == null ? 'http://images.clipartpanda.com/style-clipart-psy.png' : team.strThumb"
+                id="badge">
+            <p> Name: {{team.strPlayer}}</p>
+            <p> Nationality: {{team.strNationality}}</p>
+            <p> Team: {{team.strTeam}}</p>
+            <p> Position: {{team.strPosition}}</p>
+            <p> Kit Number: {{team.strNumber}}</p>
+
+            <select placeholder="Add to Team" [(ngModel)]="selectedTeam">
+                <option *ngFor="let team of created" [value]="team.name">{{team.name}}</option>
+            </select>
+            <button (click)="addFromTeam(player, selectedTeam)">Add to Dream Team</button>
+           
+        </div>
+    </div>

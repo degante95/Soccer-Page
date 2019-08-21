@@ -1,0 +1,17 @@
+<div class="form-inline my-2 my-lg-0 boxColor">
+        <input type="text" [(ngModel)]="nameOfTeam" placeholder="Team Name" class="form-control mr-sm-2">
+        <button class="btn btn-outline-success my-2 my-sm-0" (click)="createTeam()">New Team</button>
+</div>
+
+
+<div *ngFor="let team of allTeams" class="main">
+    <h1 class="playlist-title name">{{team.name}}</h1>
+
+    <div *ngFor="let x of team.player" class="container-fluid row songs">
+        <img [src]="x.Img" id="badge">
+        <p class="col-sm-6 col-md-6 col-lg-3"> Name: {{x.Name}}</p>
+        <p class="col-sm-6 col-md-6 col-lg-3"> Position: {{x.Position}} </p>
+        <p class="col-sm-6 col-md-6 col-lg-3"> Team: {{x.Team}}</p>
+        <p> Kit Number: {{x.Kit}}</p>
+    </div>
+</div>
