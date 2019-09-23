@@ -1,25 +1,28 @@
-<div class="form-inline my-2 my-lg-0 boxColor">
-    <input class="form-control mr-sm-2" type="text" placeholder="Search Team" [(ngModel)]="searchTable">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="search()">Search</button>
+<div class="md-form my-0 form-inline waves-light navbar-light blue-grey lighten-4 ml" mdbWavesEffect>
+    <span class="spacer"></span>
+    <input class="form-control mr-sm-2 text" type="text" placeholder="Search Team" [(ngModel)]="searchForTeam">
+    <button mdbBtn color="success" outline="true" size="sm" class="my-0 waves-light" type="submit" mdbWavesEffect
+        (click)="search()">Search</button>
 </div>
-<!-- {{embed}} -->
 
 <div class="container-fluid row center padding">
-<div class="col-sm-12 col-md-6 col-lg-4 center box results" *ngFor="let result of results">
-        <img [src]="result.strTeamBadge == null ? 'http://images.clipartpanda.com/style-clipart-psy.png' : result.strTeamBadge" id="badge" >
-        <img [src]="result.strTeamJersey == null ? 'http://images.clipartpanda.com/style-clipart-psy.png' : result.strTeamJersey" id="badge">
-        <br>
-        <button><a [routerLink]="['/teamplayers/'+result.idTeam]" class="link">Team Roster</a></button>
-        <button><a [routerLink]="['/events/'+result.idTeam]" class="link" >Next Events</a></button>
-        <br>
+    <div class="col-sm-12 col-md-6 col-lg-4 center results" *ngFor="let result of results">
+        <img [src]="result.strTeamBadge == null ? 'http://images.clipartpanda.com/style-clipart-psy.png' : result.strTeamBadge"
+            id="badge">
+        <img [src]="result.strTeamJersey == null ? 'http://images.clipartpanda.com/style-clipart-psy.png' : result.strTeamJersey"
+            id="badge">
+        <div>
+            <button mdbBtn color="success" outline="true" size="sm" class="my-0 waves-light" mdbWavesEffect><a
+                    [routerLink]="['/teamplayers/'+result.idTeam]" class="link">Team Roster</a></button>
+            <button mdbBtn color="success" outline="true" size="sm" class="my-0 waves-light" mdbWavesEffect><a
+                    [routerLink]="['/events/'+result.idTeam]" class="link">Next Events</a></button>
+        </div>
         <p>Team Name: {{result.strTeam}}</p>
         <p>Club League: {{result.strLeague}}</p>
         <p>Home Stadium: {{result.strStadium}}</p>
         <p>Country: {{result.strCountry}}</p>
         <p class="team">Team History</p>
         <div class="overflow-scroll">{{result.strDescriptionEN}}</div>
-        
-</div>
-</div>
 
-
+    </div>
+</div>

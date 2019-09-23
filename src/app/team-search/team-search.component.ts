@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VideosService } from '../videos.service';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-team-search',
@@ -7,19 +7,19 @@ import { VideosService } from '../videos.service';
   styleUrls: ['./team-search.component.scss']
 })
 export class TeamSearchComponent implements OnInit {
-  searchTable: string = "";
+  searchForTeam: string = "";
   results: Array<any>;
-  constructor(private videoService: VideosService) { }
+  constructor(private ApiService: ApiService) { }
   search(){
-    this.videoService.callingApi(this.searchTable).subscribe(res => {this.results = res
-      this.videoService.saveTeam(res)
+    this.ApiService.callingApi(this.searchForTeam).subscribe(res => {this.results = res
+      this.ApiService.saveTeam(res)
       console.log(this.results)}
       );
     
   }
 
   ngOnInit() {
-    this.results = this.videoService.returnSaveTeam()
+    this.results = this.ApiService.returnSaveTeam()
   }
 
 }

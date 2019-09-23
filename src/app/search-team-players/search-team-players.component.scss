@@ -3,9 +3,8 @@
     height: 100px;
 }
 .results {
-    background-color: rgba(73,81,111,0.6);
     color: white;
-    border: 3px solid black;
+    margin: 3px;
 }
 .boxColor{
     background-color: #f8f9fa !important;
@@ -19,15 +18,14 @@
     margin: 0% !important;
     padding-top: 15px;
 }
-.backToSearch{
-    background-color: rgba(73,81,111,0.6);
-    color: white;
-    border: 3px solid black;
-    text-decoration: none;
-    width: 200px;
-}
 .link{
-    color: black;
+    color:white;
     text-decoration: none;
 
 }
+.example-card {
+    max-width: 300px;
+    background-color: rgba(73,81,111,0.6);
+    flex-basis: 200px;
+    flex-grow: 1;
+  }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VideosService } from '../videos.service';
+import { ApiService } from '../api.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -10,10 +10,10 @@ import { ActivatedRoute } from '@angular/router';
 export class EventsComponent implements OnInit {
   eventResult: any;
   teamId: string = "";
-  constructor(private videoService: VideosService, private actr: ActivatedRoute) {
+  constructor(private ApiService: ApiService, private actr: ActivatedRoute) {
     this.teamId = actr.snapshot.params.id;
     console.log(this.teamId)
-    videoService.callingEvent(this.teamId).subscribe(res =>{ this.eventResult = res
+    ApiService.callingEvent(this.teamId).subscribe(res =>{ this.eventResult = res
     console.log(res);
     })
    }

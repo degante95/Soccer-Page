@@ -1,18 +1,46 @@
-<div class="backToSearch"><a [routerLink]="['/teams']" class="link">Back to Team Search</a></div>
+<button mdbBtn color="success" outline="true" size="sm" class="my-0 waves-light" mdbWavesEffect><a [routerLink]="['/teams']" class="link">Back to Team Search</a></button>
     <div class="container-fluid row padding">
-        <div class="col-sm-12 col-md-6 col-lg-4 center box results" *ngFor="let team of teamResult">
-                <img [src]="team.strThumb == null ? 'http://images.clipartpanda.com/style-clipart-psy.png' : team.strThumb"
+        <div class="results" *ngFor="let team of teamResult">
+                <!-- <img [src]="team.strThumb == null ? 'http://images.clipartpanda.com/style-clipart-psy.png' : team.strThumb"
                 id="badge">
             <p> Name: {{team.strPlayer}}</p>
+            <p> Position: {{team.strPosition}}</p>
             <p> Nationality: {{team.strNationality}}</p>
             <p> Team: {{team.strTeam}}</p>
-            <p> Position: {{team.strPosition}}</p>
+            
             <p> Kit Number: {{team.strNumber}}</p>
 
             <select placeholder="Add to Team" [(ngModel)]="selectedTeam">
                 <option *ngFor="let team of created" [value]="team.name">{{team.name}}</option>
             </select>
-            <button (click)="addFromTeam(player, selectedTeam)">Add to Dream Team</button>
-           
+            <button (click)="addFromTeam(team, selectedTeam)">Add to Dream Team</button> -->
+            <mat-card class="example-card">
+            <mat-card-header>
+                    <img mat-card-avatar [src]="team.strThumb == null ? 'http://images.clipartpanda.com/style-clipart-psy.png' : team.strThumb"
+                    id="badge">
+                <mat-card-title>{{team.strPlayer}}</mat-card-title>
+                <mat-card-subtitle>{{team.strPosition}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content class="left">
+                    <p> Nationality: {{team.strNationality}}</p>
+                    <p> Team: {{team.strTeam}}</p>
+                    <p> Kit Number: {{team.strNumber}}</p>
+            </mat-card-content>
+            <mat-card-actions class="center">
+                <mat-form-field>
+                    <mat-label>Add to Team</mat-label>
+                    <mat-select [(ngModel)]="selectedTeam">
+                        <mat-option *ngFor="let team of created" [value]="team.name">
+                            {{team.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <button mat-button (click)="addFromTeam(team, selectedTeam)">Add to Dream Team</button>
+            </mat-card-actions>
+        </mat-card>
         </div>
     </div>
+
+
+
+   

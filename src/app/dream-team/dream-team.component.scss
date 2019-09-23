@@ -1,0 +1,165 @@
+.main{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    flex-grow: 1;
+    justify-content: center;
+}
+.left{
+  float: left;
+}
+.ml{
+  margin-left: 0% !important;
+}
+.text{
+    color: black;
+}
+.spacer {
+  float: left;
+  padding-left: 25px;
+}
+
+.players {
+   display: flex;
+   flex-flow: row wrap;
+   flex-grow: 1;
+   flex-basis: 50%;
+}
+.title {
+    background-color: rgba(73,81,111,0.6);
+    padding-left: 60px;
+    color: white;
+    margin: 3px;
+    flex-basis: 100%;
+    height: 50px;
+    text-align: center;
+}
+.boxColor{
+    background-color: #f8f9fa !important;
+    padding: 20px;
+    width: 350px;
+}
+#badge {
+    width: 100px;
+    height: 100px;
+}
+
+.field{
+    background-image: url("/assets/field.jpg");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    height: 725px;
+    align-items: flex-start;
+    flex-grow: 0;
+    position: relative;
+    flex-basis:550px;
+}
+.example-card {
+    background-color: rgba(73,81,111,0.6);
+    flex: 1 1 200px;
+    margin: 5px;
+  }
+  .mat-card-avatar{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+  }
+  .forward2{
+      position: absolute;
+      bottom:90px;
+      right:200px;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background-color: white;
+  }
+  .forward1{
+      position: absolute;
+      bottom: 90px;
+      left: 200px;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background-color: white;
+  }
+  .midfield1{
+    position: absolute;  
+    bottom: 250px;
+    left: 90px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: white; 
+  }
+  .midfield2{
+    position: absolute;  
+    bottom: 250px;
+    left: 195px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: white; 
+  }
+  .midfield3{
+    position: absolute;  
+    bottom: 250px;
+    right: 195px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: white; 
+  }
+  .midfield4{
+    position: absolute;  
+    bottom: 250px;
+    right: 90px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: white; 
+  }
+.defense1{
+position: absolute;
+top:150px;
+left:90px;
+height: 50px;
+width: 50px;
+border-radius: 50%;
+background-color: white; 
+}
+.defense2{
+    position: absolute;
+    top:150px;
+    left:195px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: white; 
+}
+.defense3{
+    position: absolute;
+top:150px;
+right:195px;
+height: 50px;
+width: 50px;
+border-radius: 50%;
+background-color: white; 
+}
+.defense4{
+    position: absolute;
+top:150px;
+right:90px;
+height: 50px;
+width: 50px;
+border-radius: 50%;
+background-color: white; 
+}
+.goalie{
+position: absolute;
+top:50px;
+left:45%;
+height: 50px;
+width: 50px;
+border-radius: 50%;
+background-color: white; 
+}

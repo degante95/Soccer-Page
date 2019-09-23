@@ -1,11 +1,14 @@
 .icon{
-    width: 75px;
-    height: 75px;
+    height: 40px;
     
 }
 .appcenter{
     text-align: center;
-    background-color: rgba(73,81,111,0.6);
+    background-color: rgba(219, 220, 221, 0.6);
     color: white;
     margin: 0%;
+}
+
+.spacer {
+    flex: 1 1 auto;
 }

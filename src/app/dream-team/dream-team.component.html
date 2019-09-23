@@ -1,0 +1,49 @@
+<div class="md-form my-0 form-inline waves-light navbar-light blue-grey lighten-4 ml" mdbWavesEffect>
+        <span class="spacer"></span>
+    <input class="form-control mr-sm-2 text" type="text" [(ngModel)]="nameOfTeam" placeholder="Team Name">
+    <button mdbBtn color="success" outline="true" size="sm" class="my-0 waves-light" type="submit" mdbWavesEffect (click)="createTeam()">New Team</button>
+</div>
+
+<div *ngFor="let team of allTeams; let idx = index" class="main">
+    <h1 class="title name">{{team.name}}<button mat-button (click)="deleteTeamCreated(idx)"><mat-icon>delete</mat-icon></button></h1>
+
+    <div  class="players">
+        <mat-card *ngFor="let play of team.player" class="example-card">
+            <mat-card-header>
+                <img mat-card-avatar [src]="play.Img == null ? 'http://images.clipartpanda.com/style-clipart-psy.png' : play.Img" id="badge">
+                <mat-card-title>{{play.Name}}</mat-card-title>
+                <mat-card-subtitle>{{play.Position}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content class="left">
+                <p> Team: {{play.Team}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <mat-form-field>
+                        <mat-label>Player Positions</mat-label>
+                        <mat-select [(ngModel)]="pos" >
+                            <mat-option *ngFor="let pos of listPosition" [value]="pos.value">
+                                {{pos.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                <button mat-button (click)="fieldPlacement(play,idx)">Add to Position</button>
+                <button mat-button (click)="deletePlayer(play.id, idx)"><mat-icon>delete</mat-icon></button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+    <div class="field">
+        <div class="goalie"><img *ngIf="team.positions.GK.Img" mat-card-avatar [src]="team.positions.GK.Img"></div>
+        <div class="defense1"><img *ngIf="team.positions.LB.Img" mat-card-avatar [src]="team.positions.LB.Img"></div>
+        <div class="defense2"><img *ngIf="team.positions.CB.Img" mat-card-avatar [src]="team.positions.CB.Img"></div>
+        <div class="defense3"><img *ngIf="team.positions.CBB.Img" mat-card-avatar [src]="team.positions.CBB.Img"></div>
+        <div class="defense4"><img *ngIf="team.positions.RB.Img" mat-card-avatar [src]="team.positions.RB.Img"></div>
+        <div class="midfield1"><img *ngIf="team.positions.LM.Img" mat-card-avatar [src]="team.positions.LM.Img"></div>
+        <div class="midfield2"><img *ngIf="team.positions.CM.Img" mat-card-avatar [src]="team.positions.CM.Img"></div>
+        <div class="midfield3"><img *ngIf="team.positions.CMM.Img" mat-card-avatar [src]="team.positions.CMM.Img"></div>
+        <div class="midfield4"><img *ngIf="team.positions.RM.Img" mat-card-avatar [src]="team.positions.RM.Img"></div>
+        <div class="forward1"><img *ngIf="team.positions.LF.Img" mat-card-avatar [src]="team.positions.LF.Img"></div>
+        <div class="forward2"><img *ngIf="team.positions.RF.Img" mat-card-avatar [src]="team.positions.RF.Img"></div>
+    </div>
+
+</div>

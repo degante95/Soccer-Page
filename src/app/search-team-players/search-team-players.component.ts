@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VideosService } from '../videos.service';
+import { ApiService } from '../api.service';
 import { ActivatedRoute } from '@angular/router';
 import { DreamTeamService } from '../dream-team.service';
 
@@ -12,10 +12,11 @@ export class SearchTeamPlayersComponent implements OnInit {
 
   teamResult: any;
   teamId: string = "";
-  constructor(private videoService: VideosService, private actr: ActivatedRoute, private dream: DreamTeamService) {  
+  selectedTeam: string = "";
+  constructor(private ApiService: ApiService, private actr: ActivatedRoute, private dream: DreamTeamService) {  
     this.teamId = actr.snapshot.params.id;
     console.log(this.teamId)
-    videoService.callingTeamPlayers(this.teamId).subscribe(res =>{ this.teamResult = res
+    ApiService.callingTeamPlayers(this.teamId).subscribe(res =>{ this.teamResult = res
     console.log(res);
     })
    }

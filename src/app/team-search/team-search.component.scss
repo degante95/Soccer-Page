@@ -5,16 +5,11 @@
 .results {
     background-color: rgba(73,81,111,0.6);
     color: white;
-    border: 3px solid black;
+    margin: 3px;
 }
 .overflow-scroll{
     height: 300px;
     overflow: scroll;
-}
-.boxColor{
-    background-color: #f8f9fa !important;
-    padding: 20px;
-    width: 350px;
 }
 .center{
     text-align: center;
@@ -22,9 +17,22 @@
 .padding{
     margin: 0% !important;
     padding-top: 15px;
+     display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
-.link{
-    color: black;
-    text-decoration: none;
+// .link{
+//     color: white;
+//     text-decoration: none;
 
+// }
+.ml{
+    margin-left: 0% !important;
+  }
+  .text{
+      color: black;
+  }
+  .spacer {
+    float: left;
+    padding-left: 25px;
 }

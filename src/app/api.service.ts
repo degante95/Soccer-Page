@@ -6,7 +6,7 @@ import { map} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class VideosService {
+export class ApiService {
   teamSearch: Array<any>=[]
   constructor(private http: HttpClient) { }
 

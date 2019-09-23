@@ -1,7 +1,7 @@
 .results {
     background-color: rgba(73,81,111,0.6);
     color: white;
-    border: 3px solid black;
+    margin: 3px;
 }
 .boxColor{
     background-color: #f8f9fa !important;
@@ -14,16 +14,12 @@
 .padding{
     margin: 0% !important;
     padding-top: 15px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
-.backToSearch{
-    background-color: rgba(73,81,111,0.6);
+    .link{
     color: white;
-    border: 3px solid black;
-    text-decoration: none;
-    width: 200px;
-}
-.link{
-    color: black;
     text-decoration: none;
 
 }

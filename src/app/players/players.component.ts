@@ -10,6 +10,7 @@ import { DreamTeamService } from '../dream-team.service';
 export class PlayersComponent implements OnInit {
   searchplayer: string = "";
   playerResult: Array<object>;
+  selectedTeam: string = "";
   constructor(private playerService: PlayersServiceService, private dream: DreamTeamService) { }
   
   created = this.dream.teamRoster
